@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>calculator</title>
+  <meta name'viewport' content='initial-scale=1,width=device-width' />
+  <meta charset='utf-8' />
+  <script>
+    const doc = document,
+      get = 'querySelector',
+      gets = 'querySelectorAll',
+      nel = 'createElement',
+      ntn = 'createTextNode';
+  </script>
+  <link rel='stylesheet' href='reset.css' />
+  <link rel='stylesheet' href='style.css' />
+  <script src='calc.js'>//TO-DO calc.js</script>
+</head>
+<body>
+  <div id='container'>
+    <div id='calc'>
+      <div id='out'></div>
+      <div id='mem'>
+        <div class='onCe normalBtn btn'>ON/CE</div>
+        <div class='memBtn'>
+          <div class='memTxt'>MRC</div>
+          <div class='yellow btn'></div>
+        </div>
+        <div class='memBtn'>
+          <div class='memTxt'>M-</div>
+          <div class='yellow btn'></div>
+        </div>
+        <div class='memBtn'>
+          <div class='memTxt'>M+</div>
+          <div class='yellow btn'></div>
+        </div>
+      </div>
+      <div>
+        <div class='normalBtn btn'>OFF</div>
+        <div class='operator normalBtn btn'>√</div>
+        <div class='operator normalBtn btn'>%</div>
+        <div class='operator normalBtn btn'>÷</div>
+      </div>
+      <div>
+        <div class='number normalBtn btn'>7</div>
+        <div class='number normalBtn btn'>8</div>
+        <div class='number normalBtn btn'>9</div>
+        <div class='operator normalBtn btn'>x</div>
+      </div>
+      <div>
+        <div class='number normalBtn btn'>4</div>
+        <div class='number normalBtn btn'>5</div>
+        <div class='number normalBtn btn'>6</div>
+        <div class='operator normalBtn btn'>-</div>
+      </div>
+      <div class='double'>
+        <div class='notPlus'>
+          <div>
+            <div class='number btn'>1</div>
+            <div class='number btn'>2</div>
+            <div class='number btn'>3</div>
+          </div>
+          <div>
+            <div class='number btn'>0</div>
+            <div class='operator btn'>.</div>
+            <div class='operator btn'>=</div>
+          </div>
+        </div>
+        <div class='operator plus btn'>+</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

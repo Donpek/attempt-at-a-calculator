@@ -1,0 +1,121 @@
+#container{
+  display:flex;
+  width:350px;
+  height:350px;
+  font-size:100%;
+}
+#calc{
+  background:#333;
+  padding: 35px 15px 10px 15px;
+  border: solid 10px #444;
+  border-radius:15px;
+  color:white;
+  font-family:arial;
+  font-size:1em;
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+}
+#calc>div{
+  display:flex;
+  flex:7;
+  flex-direction:row;
+}
+#calc>#out{
+  background:#030;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:right;
+  border: 5px solid #040;
+  border-radius: 15px;
+  margin-bottom:10px;
+  color:#0c0;
+  font-size:5em;
+}
+#calc>div>.normalBtn{
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  flex:4;
+  border: 2.5px solid #222;
+  border-radius: 15px;
+  background:#111;
+}
+#calc>.double{
+  display:flex;
+  flex-direction:row;
+  flex:14;
+}
+#calc>.double>.notPlus{
+  display:flex;
+  flex-direction:column;
+  flex-grow:3;
+}
+#calc>.double>.plus{
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  border: 2.5px solid #070;
+  border-radius: 15px;
+  background:#060;
+  flex-grow:1;
+}
+#calc>.double>div>div{
+  display:flex;
+  flex-direction:row;
+  flex:2;
+}
+#calc>.double>div>div>div{
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  flex:3;
+  border: 2.5px solid #222;
+  border-radius: 15px;
+  background:#111;
+}
+#calc>#mem{
+  margin-bottom:15px;
+}
+#calc>div>.onCe{
+  background:#060;
+  border: 2.5px solid #070;
+  border-radius:100%;
+  flex:4;
+}
+#calc>div>.memBtn{
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  justify-content:center;
+  flex:4;
+}
+#calc>div>.memBtn>.yellow{
+  background:#660;
+  border: 2.5px solid #770;
+  border-radius:15px;
+  flex-grow:3;
+  margin:0 10px 10px 10px;
+}
+#calc>div>.memBtn>.memTxt{
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.btn:active{
+  transform:scale(.95);
+}
+.btn:hover{
+  cursor:pointer;
+}
+.operator{
+  font-size:175%;
+}
+.number{
+  font-size:200%;
+}
