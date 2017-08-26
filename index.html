@@ -13,59 +13,59 @@
   </script>
   <link rel='stylesheet' href='reset.css' />
   <link rel='stylesheet' href='style.css' />
-  <script src='calc.js'>//TO-DO calc.js</script>
+  <script src='calc.js'></script>
 </head>
 <body>
   <div id='container'>
     <div id='calc'>
       <div id='out'></div>
       <div id='mem'>
-        <div class='onCe normalBtn btn'>ON/CE</div>
+        <div onclick='calcIn("ON/CE")' class='onCe normalBtn btn'>ON/CE</div>
         <div class='memBtn'>
           <div class='memTxt'>MRC</div>
-          <div class='yellow btn'></div>
+          <div onclick='calcIn("MRC")' class='yellow btn'></div>
         </div>
         <div class='memBtn'>
           <div class='memTxt'>M-</div>
-          <div class='yellow btn'></div>
+          <div onclick='calcIn("M-")' class='yellow btn'></div>
         </div>
         <div class='memBtn'>
           <div class='memTxt'>M+</div>
-          <div class='yellow btn'></div>
+          <div onclick='calcIn("M+")' class='yellow btn'></div>
         </div>
       </div>
       <div>
-        <div class='normalBtn btn'>OFF</div>
-        <div class='operator normalBtn btn'>√</div>
-        <div class='operator normalBtn btn'>%</div>
-        <div class='operator normalBtn btn'>÷</div>
+        <div onclick='calcIn("OFF")' class='normalBtn btn'>OFF</div>
+        <div onclick='calcIn("SQRT")' class='operator normalBtn btn'>sqrt</div>
+        <div onclick='calcIn("MOD")' class='operator normalBtn btn'>%</div>
+        <div onclick='calcIn("DIV")' class='operator normalBtn btn'>/</div>
       </div>
       <div>
-        <div class='number normalBtn btn'>7</div>
-        <div class='number normalBtn btn'>8</div>
-        <div class='number normalBtn btn'>9</div>
-        <div class='operator normalBtn btn'>x</div>
+        <div onclick='calcIn("7")' class='number normalBtn btn'>7</div>
+        <div onclick='calcIn("8")' class='number normalBtn btn'>8</div>
+        <div onclick='calcIn("9")' class='number normalBtn btn'>9</div>
+        <div onclick='calcIn("MUL")' class='operator normalBtn btn'>*</div>
       </div>
       <div>
-        <div class='number normalBtn btn'>4</div>
-        <div class='number normalBtn btn'>5</div>
-        <div class='number normalBtn btn'>6</div>
-        <div class='operator normalBtn btn'>-</div>
+        <div onclick='calcIn("4")' class='number normalBtn btn'>4</div>
+        <div onclick='calcIn("5")' class='number normalBtn btn'>5</div>
+        <div onclick='calcIn("6")' class='number normalBtn btn'>6</div>
+        <div onclick='calcIn("SUB")' class='operator normalBtn btn'>-</div>
       </div>
       <div class='double'>
         <div class='notPlus'>
           <div>
-            <div class='number btn'>1</div>
-            <div class='number btn'>2</div>
-            <div class='number btn'>3</div>
+            <div onclick='calcIn("1")' class='number btn'>1</div>
+            <div onclick='calcIn("2")' class='number btn'>2</div>
+            <div onclick='calcIn("3")' class='number btn'>3</div>
           </div>
           <div>
-            <div class='number btn'>0</div>
-            <div class='operator btn'>.</div>
-            <div class='operator btn'>=</div>
+            <div onclick='calcIn("0")' class='number btn'>0</div>
+            <div onclick='calcIn("DEC")' class='operator btn'>.</div>
+            <div onclick='calcIn("EVAL")' class='operator btn'>=</div>
           </div>
         </div>
-        <div class='operator plus btn'>+</div>
+        <div onclick='calcIn("ADD")' class='operator plus btn'>+</div>
       </div>
 
     </div>

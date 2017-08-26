@@ -1,8 +1,7 @@
 #container{
   display:flex;
   width:350px;
-  height:350px;
-  font-size:100%;
+  height:480px;
 }
 #calc{
   background:#333;
@@ -22,15 +21,15 @@
   flex-direction:row;
 }
 #calc>#out{
-  background:#030;
+  background:#040;
   display:flex;
   flex-direction:column;
   justify-content:center;
   text-align:right;
-  border: 5px solid #040;
+  border: 5px solid #030;
   border-radius: 15px;
   margin-bottom:10px;
-  color:#0c0;
+  color:#070;
   font-size:5em;
 }
 #calc>div>.normalBtn{
@@ -58,9 +57,9 @@
   text-align:center;
   flex-direction:column;
   justify-content:center;
-  border: 2.5px solid #070;
+  border: 2.5px solid #077;
   border-radius: 15px;
-  background:#060;
+  background:#088;
   flex-grow:1;
 }
 #calc>.double>div>div{
@@ -82,8 +81,8 @@
   margin-bottom:15px;
 }
 #calc>div>.onCe{
-  background:#060;
-  border: 2.5px solid #070;
+  background:#088;
+  border: 2.5px solid #077;
   border-radius:100%;
   flex:4;
 }
@@ -95,8 +94,8 @@
   flex:4;
 }
 #calc>div>.memBtn>.yellow{
-  background:#660;
-  border: 2.5px solid #770;
+  background:#ee0;
+  border: 2.5px solid #dd0;
   border-radius:15px;
   flex-grow:3;
   margin:0 10px 10px 10px;
@@ -114,8 +113,6 @@
   cursor:pointer;
 }
 .operator{
-  font-size:175%;
 }
 .number{
-  font-size:200%;
 }
