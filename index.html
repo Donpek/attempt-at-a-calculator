@@ -11,13 +11,30 @@
   </script>
   <link rel='stylesheet' href='reset.css' />
   <link rel='stylesheet' href='style.css' />
+  <link href='test.css' />
   <script src='calc.js'></script>
   <script>const calcIn = Calc()</script>
 </head>
 <body>
+  <!--
+    TO-DO:
+      - make the font, margins and paddings scale
+        with container
+      - make different buttons have different
+        font size multipliers
+      - make ON/CE always be a circle
+      - remove text selection
+      - add LED font to #out
+  -->
+  <div id='test'>
+
+  </div>
   <div id='container'>
     <div id='calc'>
-      <div id='out'></div>
+      <div class='out'>
+        <div class='M-icon'>M</div>
+        <p class='val'><p>
+      </div>
       <div id='mem'>
         <div onclick='calcIn("ON/CE")' class='onCe normalBtn btn'>ON/CE</div>
         <div class='memBtn'>

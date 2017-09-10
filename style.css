@@ -1,7 +1,7 @@
 #container{
   display:flex;
   width:350px;
-  height:480px;
+  height:350px;
 }
 #calc{
   background:#333;
@@ -10,7 +10,7 @@
   border-radius:15px;
   color:white;
   font-family:arial;
-  font-size:1em;
+  font-size:12px;
   display:flex;
   flex-direction:column;
   flex-grow:1;
@@ -20,17 +20,24 @@
   flex:7;
   flex-direction:row;
 }
-#calc>#out{
-  background:#040;
+#calc>.out{
+  position:relative;
+  background:#575;
   display:flex;
   flex-direction:column;
   justify-content:center;
   text-align:right;
-  border: 5px solid #030;
+  border: 5px solid #464;
   border-radius: 15px;
   margin-bottom:10px;
-  color:#070;
-  font-size:5em;
+  color:#111;
+  text-align:right;
+}
+#calc>.out>.M-icon{
+  position:absolute;
+  left:0;top:0;
+  font-size:2em;
+  visibility:hidden;
 }
 #calc>div>.normalBtn{
   display:flex;

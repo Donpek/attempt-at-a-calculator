@@ -1,29 +1,45 @@
-const Calc = function(){
-  let outTxt = memMRC = memOpTwo =
-  memOpOne = op = currCm = prevCm =
-  toOut = '';
-  let isOn = replaceAll = false;
+const Calc = () => {
+  let outTxt =
+      secondNum =
+      firstNum =
+      operation =
+      currInput =
+      prevInput =
+      toOut = '';
+  let memory = '0';
+  let isOn =
+      replaceAll =
+      replaceAllOverride = false;
+  let outDiv, out, M;
 
   window.onload = () => {
-    const out = doc[get]('#out');
-    out.style.fontSize = (out.clientHeight*.85) + 'px';
+    outDiv = doc[get]('#calc>.out');
+    M = doc[get]('#calc>.out>.M-icon');
+    out = doc[get]('#calc>.out>.val');
+    out.style.fontSize = outDiv.clientHeight+'px';
   }//onload
 
+  /*
+    TO-DO:
+    - floating-point rounding handling
+  */
   return function calculator_input(val){
-    switch(val){
+    switch (val) {
       case 'ON/CE':
         toOut = '0';
-        isOn = replaceAll = true;
-        op = outTxt = memOpOne = memOpOne = '';
+        isOn = true;
+        operation = outTxt =
+        firstNum = secondNum = '';
         break;
       case 'OFF':
-        outTxt = toOut = '';
+        outTxt = memory = '';
+        M.style.visibility = 'hidden';
         isOn = false;
-        replaceAll = true;
         break;
     }//switch
 
-    if(isOn)
+    if(isOn){
+      prevInput = currInput;
       switch(val){
         case '0':
         case '1':
@@ -36,68 +52,103 @@ const Calc = function(){
         case '8':
         case '9':
           toOut = val;
-          prevCm = currCm;
-          currCm = 'num';
+          currInput = 'num';
           break;
         case 'DEC':
-          prevCm = currCm;
-          currCm = 'num';
-          toOut = '.';
+          currInput = 'num';
+          if(outTxt === '0' ||
+             prevInput !== 'num'){
+            toOut = '0.';
+            replaceAllOverride = true;}
+          else if(outTxt.indexOf('.') === -1)
+            toOut = '.';
           break;
         case 'ADD':
         case 'SUB':
         case 'MUL':
         case 'DIV':
         case 'MOD':
-          memOpOne = outTxt;
-          prevCm = currCm;
-          currCm = 'op';
-          op = val;
+          firstNum = outTxt;
+          currInput = 'operation';
+          operation = val;
           break;
         case 'SQRT':
-          toOut = Math.sqrt(parseFloat(outTxt));
-          prevCm = currCm;
-          currCm = 'op';
+          toOut = (Math.sqrt(
+                    parseFloat(outTxt))
+                  ).toString();
+          replaceAllOverride = true;
           break;
         case 'EVAL':
-          prevCm = currCm;
-          currCm = 'eval';
-          if(prevCm !== 'eval')
-            memOpTwo = outTxt;
-          switch(op){
+          currInput = 'eval';
+          if(prevInput !== 'eval')
+            secondNum = outTxt;
+          switch(operation){
             case 'ADD':
-              toOut = parseFloat(memOpOne) +
-                      parseFloat(memOpTwo);
+              toOut = (parseFloat(firstNum) +
+                      parseFloat(secondNum)
+                      ).toString();
               break;
             case 'SUB':
-              toOut = parseFloat(memOpOne) -
-                      parseFloat(memOpTwo);
+              toOut = (parseFloat(firstNum) -
+                      parseFloat(secondNum)
+                      ).toString();
               break;
             case 'MUL':
-              toOut = parseFloat(memOpOne) *
-                      parseFloat(memOpTwo);
+              toOut = (parseFloat(firstNum) *
+                      parseFloat(secondNum)
+                      ).toString();
               break;
             case 'DIV':
-              toOut = parseFloat(memOpOne) /
-                      parseFloat(memOpTwo);
+              toOut = (parseFloat(firstNum) /
+                      parseFloat(secondNum)
+                      ).toString();
               break;
             case 'MOD':
-              toOut = parseFloat(memOpOne) %
-                      parseFloat(memOpTwo);
+              toOut = (parseFloat(firstNum) %
+                      parseFloat(secondNum)
+                      ).toString();
               break;
             default:
               toOut = '0';
               break;
           }//switch
-          memOpOne = toOut;
+          firstNum = toOut;
+          break;
+        case 'M+':
+          currInput = 'operation';
+          memory = outTxt;
+          M.style.visibility = 'visible';
+          break;
+        case 'M-':
+          currInput = 'operation';
+          memory = '0';
+          M.style.visibility = 'hidden';
+          break;
+        case 'MRC':
+          replaceAllOverride = true;
+          toOut = memory;
           break;
       }//switch
+    }//if
 
-    if(outTxt === '0') replaceAll = true;
-    else replaceAll = false;
-
-    if(prevCm === 'op' && currCm === 'num' || currCm === 'eval')
+    if(outTxt === '0' &&
+       currInput !== 'operation')
       replaceAll = true;
+    else if(outTxt !== '0')
+      replaceAll = false;
+
+    if(prevInput === 'operation' &&
+       currInput === 'num' ||
+       currInput === 'eval')
+      replaceAll = true;
+
+    if(currInput !== 'eval' &&
+       prevInput === 'eval')
+      replaceAll = false;
+
+    if(replaceAllOverride){
+      replaceAll = true;
+      replaceAllOverride = false;}
 
     if(replaceAll)
       outTxt = toOut;

@@ -1,0 +1,11 @@
+{
+  "files":{
+    "test.scss":{
+      "output": "test.css",
+      "format": "scss"
+    }
+  },
+  "autowatch":[
+    "test.scss"
+  ]
+}
